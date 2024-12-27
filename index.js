@@ -1,15 +1,14 @@
 import express from "express";
 import connectDB from "./lib/connectDB.js";
-
 import userRouter from "./routes/user.route.js";
 import postRouter from "./routes/post.route.js";
 import commentRouter from "./routes/comment.route.js";
 import webhookRouter from "./routes/webhook.route.js";
-
 import { clerkMiddleware, requireAuth } from "@clerk/express";
-
 import cors from "cors";
+import dotenv from "dotenv";
 
+dotenv.config()
 const app = express();
 
 app.use(cors(process.env.CLIENT_URL))

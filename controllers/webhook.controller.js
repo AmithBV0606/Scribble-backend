@@ -2,6 +2,9 @@ import { Webhook } from "svix";
 import User from "../models/user.model.js";
 import Post from "../models/post.model.js";
 import Comment from "../models/comment.model.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const clerkWebhook = async (req, res) => {
   const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
